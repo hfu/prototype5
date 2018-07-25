@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "landformclassification2-test",
+      "id": "landformclassification2",
       "type": "fill",
       "source": "e14",
       "source-layer": "landformclassification2",
@@ -82,7 +82,7 @@
       }
     },
     {
-      "id": "landformclassification1-test",
+      "id": "landformclassification1",
       "type": "fill",
       "source": "e14",
       "source-layer": "landformclassification1",
