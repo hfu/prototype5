@@ -6,7 +6,9 @@ An experimental website for consuming vector-tile-spec version of gsi-cyberjapan
 Nothing. This repository is hosted by gh-pages.
 
 ## Usage
-Access https://hfu.github.io/prototype5/
+To browse the map, access https://hfu.github.io/prototype5/.
+
+To view or edit the style of the map, access https://maputnik.github.io/editor/?style=https://hfu.github.io/prototype5/style.json#15.24/32.805147/130.702071.
 
 ## Project wiki
 
