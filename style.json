@@ -1,0 +1,517 @@
+{
+  "version": 8,
+  "metadata": {},
+  "sources": {
+    "e15": {
+      "type": "vector",
+      "tiles": [
+        "https://vectortiles.xyz/zxy/e15/{z}/{x}/{y}"
+      ],
+      "attribution": "e15",
+      "minzoom": 15,
+      "maxzoom": 15
+    },
+    "raster": {
+      "type": "raster",
+      "tiles": [
+        "https://maps.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg"
+      ],
+      "attribution": "ort",
+      "tileSize": 256,
+      "maxzoom": 18
+    },
+    "e14": {
+      "type": "vector",
+      "tiles": [
+        "https://vectortiles.xyz/zxy/e14/{z}/{x}/{y}"
+      ],
+      "attribution": "e14",
+      "minzoom": 14,
+      "maxzoom": 16
+    },
+    "e16": {
+      "type": "vector",
+      "tiles": [
+        "https://vectortiles.xyz/zxy/e16/{z}/{x}/{y}"
+      ],
+      "attribution": "e16",
+      "minzoom": 16,
+      "maxzoom": 16
+    },
+    "e18": {
+      "type": "vector",
+      "tiles": [
+        "https://vectortiles.xyz/zxy/e18/{z}/{x}/{y}"
+      ],
+      "attribution": "e18",
+      "minzoom": 18,
+      "maxzoom": 18
+    }
+  },
+  "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
+  "glyphs": "https://hfu.github.io/noto-jp/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "layout": {},
+      "paint": {
+        "background-color": "rgba(158, 158, 158, 1)"
+      }
+    },
+    {
+      "id": "raster",
+      "type": "raster",
+      "source": "raster",
+      "paint": {
+        "raster-saturation": 0,
+        "raster-brightness-min": 0.5,
+        "raster-hue-rotate": 0,
+        "raster-brightness-max": 0.7
+      }
+    },
+    {
+      "id": "landformclassification2-test",
+      "type": "fill",
+      "source": "e14",
+      "source-layer": "landformclassification2",
+      "paint": {
+        "fill-opacity": 0.2,
+        "fill-color": "rgba(144, 202, 249, 1)",
+        "fill-outline-color": "rgba(255, 255, 255, 1)"
+      }
+    },
+    {
+      "id": "landformclassification1-test",
+      "type": "fill",
+      "source": "e14",
+      "source-layer": "landformclassification1",
+      "paint": {
+        "fill-opacity": 0.2,
+        "fill-color": "rgba(239, 154, 154, 1)",
+        "fill-outline-color": "rgba(255, 255, 255, 1)"
+      }
+    },
+    {
+      "id": "rvrcl",
+      "type": "line",
+      "source": "e16",
+      "source-layer": "rvrcl",
+      "minzoom": 0,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 255, 1)",
+        "line-width": {
+          "base": 0.5,
+          "stops": [
+            [
+              12,
+              1
+            ],
+            [
+              22,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "railcl",
+      "type": "line",
+      "source": "e16",
+      "source-layer": "railcl",
+      "minzoom": 0,
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {
+          "base": 0.5,
+          "stops": [
+            [
+              12,
+              1
+            ],
+            [
+              22,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "rdcl",
+      "type": "line",
+      "source": "e16",
+      "source-layer": "rdcl",
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "miter",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 0.5,
+          "stops": [
+            [
+              12,
+              1
+            ],
+            [
+              22,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "AdmBdry",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "AdmBdry",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "CommBdry",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "CommBdry",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "SBBdry",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "SBBdry",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "RailCL",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "RailCL",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "RdCompt",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "RdCompt",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(66, 66, 66, 1)"
+      }
+    },
+    {
+      "id": "RdEdg",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "RdEdg",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(66, 66, 66, 1)"
+      }
+    },
+    {
+      "id": "WL",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "WL",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 255, 1)"
+      }
+    },
+    {
+      "id": "WStrL",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "WStrL",
+      "minzoom": 0,
+      "paint": {
+        "line-color": "rgba(0, 0, 255, 1)"
+      }
+    },
+    {
+      "id": "Cntr",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "Cntr",
+      "paint": {
+        "line-color": "rgba(204, 170, 85, 1)"
+      }
+    },
+    {
+      "id": "Cstline",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "Cstline"
+    },
+    {
+      "id": "BldL",
+      "type": "line",
+      "source": "e18",
+      "source-layer": "BldL"
+    },
+    {
+      "id": "jhj",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "jhj",
+      "minzoom": 0,
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "{基礎番号}",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "AdmPt",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "AdmPt",
+      "minzoom": 0,
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "AdmPt",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "CommPt",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "CommPt",
+      "minzoom": 0,
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "CommPt",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "SBAPt",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "SBAPt",
+      "minzoom": 0,
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "SBAPt",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "ElevPt",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "ElevPt",
+      "minzoom": 0,
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "ElevPt",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "GCP",
+      "type": "symbol",
+      "source": "e18",
+      "source-layer": "GCP",
+      "layout": {
+        "icon-image": "marker_11",
+        "text-field": "{gcpClass}",
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "text-anchor": "top",
+        "icon-anchor": "bottom"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "icon-color": "rgba(255, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "anno",
+      "type": "symbol",
+      "source": "e15",
+      "source-layer": "anno",
+      "layout": {
+        "text-field": "{knj}",
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          9,
+          18,
+          72
+        ],
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgba(121, 85, 72, 1)"
+      }
+    },
+    {
+      "id": "nnfpt",
+      "type": "symbol",
+      "source": "e15",
+      "source-layer": "nnfpt",
+      "minzoom": 0,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          9,
+          18,
+          72
+        ],
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgba(33, 150, 243, 1)"
+      }
+    },
+    {
+      "id": "nrpt",
+      "type": "symbol",
+      "source": "e15",
+      "source-layer": "nrpt",
+      "layout": {
+        "text-field": "{name}",
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          9,
+          18,
+          72
+        ],
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgba(103, 58, 183, 1)"
+      }
+    },
+    {
+      "id": "pfpt",
+      "type": "symbol",
+      "source": "e15",
+      "source-layer": "pfpt",
+      "minzoom": 0,
+      "layout": {
+        "text-field": "{pfName}",
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          15,
+          9,
+          18,
+          72
+        ],
+        "text-font": [
+          "NotoSansCJKjp-Medium"
+        ]
+      },
+      "paint": {
+        "text-color": "rgba(244, 67, 54, 1)"
+      }
+    }
+  ],
+  "id": "j22qbkiw0"
+}
