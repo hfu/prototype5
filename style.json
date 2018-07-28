@@ -100,7 +100,13 @@
           0.3,
           0.5
         ],
-        "fill-color": "rgba(239, 154, 154, 1)",
+        "fill-color": [
+          "match",
+          ["get", "code"],
+          [1010101, 11201, 11202, 11203, 11204],
+          "#d9cbae",
+          "#ffff"
+        ],
         "fill-outline-color": "rgba(255, 255, 255, 1)"
       }
     },
