@@ -71,23 +71,35 @@
       }
     },
     {
-      "id": "landformclassification2-test",
+      "id": "landformclassification2",
       "type": "fill",
       "source": "e14",
       "source-layer": "landformclassification2",
       "paint": {
-        "fill-opacity": 0.2,
+        "fill-opacity": [
+          "match",
+          ["get", "code"],
+          9999,
+          0.3,
+          0.5
+        ],
         "fill-color": "rgba(144, 202, 249, 1)",
         "fill-outline-color": "rgba(255, 255, 255, 1)"
       }
     },
     {
-      "id": "landformclassification1-test",
+      "id": "landformclassification1",
       "type": "fill",
       "source": "e14",
       "source-layer": "landformclassification1",
       "paint": {
-        "fill-opacity": 0.2,
+        "fill-opacity": [
+          "match",
+          ["get", "code"],
+          9999,
+          0.3,
+          0.5
+        ],
         "fill-color": "rgba(239, 154, 154, 1)",
         "fill-outline-color": "rgba(255, 255, 255, 1)"
       }
