@@ -108,7 +108,7 @@
           "#ff00ff",
           "#ffffff"
         ],
-        "outline-color": "rgba(255, 255, 255, 0.0)"
+        "fill-outline-color": "rgba(255, 255, 255, 0.0)"
       }
     },
     {
@@ -189,7 +189,7 @@
           "#ff00ff",
           "#ffffff"
         ],
-        "outline-color": "rgba(255, 255, 255, 0.0)"
+        "fill-outline-color": "rgba(255, 255, 255, 0.0)"
       }
     },
     {
