@@ -72,7 +72,7 @@
       "paint": {
         "fill-opacity": [
           "match",
-          ["get", "code"],
+          ["to-number", ["get", "code"]],
           9999,
           0.3,
           0.5
@@ -119,7 +119,7 @@
       "paint": {
         "fill-opacity": [
           "match",
-          ["get", "code"],
+          ["to-number", ["get", "code"]],
           9999,
           0.3,
           0.5
