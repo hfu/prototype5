@@ -62,7 +62,7 @@
     {
       "id": "raster",
       "type": "raster",
-      "source": "raster",
+      "source": "raster"
     },
     {
       "id": "landformclassification2",
