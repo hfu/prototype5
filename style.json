@@ -52,8 +52,7 @@
       "tiles": [
         "https://vectortiles.xyz/zxy/dem5a/{z}/{x}/{y}"
       ],
-      "minZoom": 0,
-      "maxZoom": 14,
+      "attribution": "dem5a", 
       "minzoom": 18,
       "maxzoom": 18
     }
