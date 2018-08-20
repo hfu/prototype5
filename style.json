@@ -61,8 +61,7 @@
       "tiles": [
         "https://vectortiles.xyz/zxy/dem10b/{z}/{x}/{y}"
       ],
-      "minZoom": 0,
-      "maxZoom": 14,
+      "attribution": "dem10b",
       "minzoom": 18,
       "maxzoom": 18
     }
