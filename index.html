@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
-<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css" />
-<script src="https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js"></script>
+<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js"></script>
 <style>
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -16,6 +16,7 @@ body { margin:0; padding:0; }
 <script>
 var map = new mapboxgl.Map({
   container: 'map', style: 'style.json', zoom: 15, center: [130.702071, 32.805147],
+  localIdeographFontFamily: "'MS Gothic', 'Hiragino Kaku Gothic Pro', sans-serif",
   attributionControl: true, hash: true
 });
 map.on('load', function() {
