@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="https://api.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css" />
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2511290-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-2511290-10');
+</script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js"></script>
+</head>
+<body>
+<div id='map'></div>
+<script>
+var tile2lng = function(x, z) {
+  return x / Math.pow(2, z) * 360 - 180
+}
+var tile2lat = function(y, z) {
+  var n = Math.PI - 2 * Math.PI * y / Math.pow(2, z)
+  return 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n)))
+}
+var tmp = {}
+var geojson = {
+  type: 'FeatureCollection',
+  features: []
+}
+var map = new mapboxgl.Map({
+  container: 'map', style: 'style.json', zoom: 12.18, center: [-0.12736, 51.50639],
+  attributionControl: true, hash: true
+})
+map.on('load', function() {
+  map.addSource('size', { type: 'geojson', data: geojson })
+  map.addLayer({
+    id: 'size-circle',
+    type: 'circle',
+    source: 'size',
+    paint: {
+      'circle-radius': ['*', ['sqrt', ['get', 'size']], 1], 
+      'circle-color': ['get', 'color'],
+      'circle-opacity':  0.5
+    }
+  })
+  map.addLayer({
+    id: 'size',
+    type: 'symbol',
+    source: 'size',
+    layout: {
+      "text-font": ["NotoSansCJKjp-Regular"],
+      "text-field": "{size}KB\nz={z}",
+      "text-size": 10
+    },
+    "paint": {
+      "text-halo-color": "#fafaf3",
+      "text-halo-width": 1,
+      "text-halo-blur": 1,
+      "text-color": "#00f"
+    }
+  })
+  map.addControl(new mapboxgl.NavigationControl());
+
+  map.on('data', function(e) {
+    // console.log(e)
+    tmp = e
+    if (e.sourceId === 'e18' && e.tile.hasData()) {
+      var f = {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            tile2lng(e.coord.canonical.x + 0.5, e.coord.canonical.z),
+            tile2lat(e.coord.canonical.y + 0.5, e.coord.canonical.z),
+            (18 - e.coord.canonical.z) * 5000
+          ]
+        },
+        properties: {
+          size: Math.round(e.tile.latestRawTileData.byteLength / 1024),
+          zxy: e.coord.canonical.z + '/' + e.coord.canonical.x + '/' + e.coord.canonical.y,
+          z: e.coord.canonical.z,
+          color: 'hsl(' + (e.coord.canonical.z * 20) + ', 100%, 75%)'
+        }
+      }
+      geojson.features.push(f)
+      map.getSource('size').setData(geojson)
+      console.log(
+        e.coord.canonical.z + '/' + e.coord.canonical.x + '/' + e.coord.canonical.y + ': ' +
+        e.tile.latestRawTileData.byteLength + ' bytes' + 
+        JSON.stringify(f, null, 2)
+      )
+    }
+  })
+})
+</script>
+</body>
+</html>
