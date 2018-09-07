@@ -14,7 +14,7 @@
     "raster": {
       "type": "raster",
       "tiles": [
-        "https://maps.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg"
+        "https://maps.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
       ],
       "attribution": "ort",
       "tileSize": 256,
